@@ -14,3 +14,5 @@ cat_pic - The URL of the cat picture
 dog_pic - The URL of the dog picture
 
 I have defined a single model in the API app, called Quote, which stores the quote text and quote author. I prepopulated these from my local computer and dumped the mysql database then repopulated my RDS instance with its contents. The dog pic is randomly selected from a S3 bucket I own, and the cat pic is retrieved from The Cat API (https://thecatapi.com/).
+
+This API is NOT public facing, it is deployed in a private subnet. My public server consists of a S3 static hosting bucket with only one file, index.html, that makes an API call anytime you click the refresh button.

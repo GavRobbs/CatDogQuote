@@ -1,7 +1,9 @@
 from .base import *
 from decouple import config
 
-ALLOWED_HOSTS = []
+CORS_ALLOW_HEADERS = ['*']
+ALLOWED_HOSTS = ['*']
+CORS_ORIGIN_ALLOW_ALL = True
 
 DEBUG = True
 
