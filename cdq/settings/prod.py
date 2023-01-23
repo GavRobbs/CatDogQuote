@@ -1,6 +1,8 @@
 from .base import *
 from decouple import config
 
+ALLOWED_HOSTS = ['*']
+
 DEBUG = False
 
 SECRET_KEY = config('SECRET_KEY')
@@ -15,3 +17,7 @@ DATABASES = {
         'PORT': config('DB_PORT')
     }
 }
+
+DOG_PIC_BUCKET_NAME = config('DOG_PIC_BUCKET_NAME')
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+AWS_SECRET_KEY = config('AWS_SECRET_KEY')
