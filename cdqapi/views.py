@@ -19,4 +19,10 @@ def inspire(request):
         'dog_pic': get_random_dog_pic_url(),
         'timestamp' : datetime.datetime.now()
     })
-        
+
+@api_view(['GET',])
+@renderer_classes([JSONRenderer,])
+def test(request):
+    return Response({
+        'message':"Testing is working!"
+    })
