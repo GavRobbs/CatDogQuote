@@ -5,6 +5,9 @@ from random import choice
 import requests
 
 def populate_quotes():
+    #Read quotes.txt line by line
+    #Split each line into quote text and author using the tilde as a delimiter
+    #Create a new quote with the data and save it to the database
     print("Going to populate the database with the quotes from the file")
     with open('quotes.txt') as quotefile:
         for line in quotefile.readlines():
@@ -22,7 +25,8 @@ def get_random_dog_pic_url():
     dog_bucket = s3_resource.Bucket(settings.DOG_PIC_BUCKET_NAME)
     all_dogs = dog_bucket.objects.all()
 
-    #This is actually dangerous, but since I know I won't have a lot of dogs stored, I can get away with it
+    #This is actually dangerous (and probably somewhat expensive)
+    #but since I know I won't have a lot of dogs stored, I can get away with it
     selected_object = choice(list(all_dogs)).key
 
     client = session.client('s3')
@@ -37,6 +41,8 @@ def get_random_dog_pic_url():
     return url
 
 def get_random_cat_pic_url():
+    #Check the CAT API documentation
+    #I didn't need an API key because I don't make a lot of requests
     cat_url = requests.get('https://api.thecatapi.com/v1/images/search').json()[0]['url']
     return cat_url
 
