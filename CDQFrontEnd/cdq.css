@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+}
+
+.quote-card{
+    border: 2px solid black;
+    max-width: 33%;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.picholder{
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#catpic_img{
+    max-width: 50%;
+    width: 50%;
+}
+
+#dogpic_img{
+    max-width: 50%;
+    width: 50%;
+}
+
+.quoteholder{
+    margin: 1.5em;
+}
+
+.card-display{
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+}
